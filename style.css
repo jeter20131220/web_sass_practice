@@ -1,5 +1,98 @@
-h1 {
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border;
+          box-sizing: border;
+  font-family: 微軟正黑體;
+  color: #000;
+}
+
+#navigation {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  padding: 30px 0;
+  -webkit-box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  width: 100%;
+  background-color: #fff;
+}
+
+#navigation .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 36px;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-left: 30px;
+}
+
+#navigation .logo:hover {
   color: #aaa;
-  font-family: 'Merriweather', serif;
+}
+
+#navigation .link a {
+  text-decoration: none;
+  padding: 60px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-size: 28px;
+}
+
+#navigation .link a:hover {
+  color: #aaa;
+}
+
+#navigation .social {
+  text-align: right;
+}
+
+#navigation .social img {
+  width: 48px;
+  margin-right: 30px;
+  -webkit-filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(137deg) brightness(91%) contrast(112%);
+          filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(137deg) brightness(91%) contrast(112%);
+}
+
+#navigation .social img:hover {
+  -webkit-filter: invert(78%) sepia(0%) saturate(0%) hue-rotate(347deg) brightness(88%) contrast(89%);
+          filter: invert(78%) sepia(0%) saturate(0%) hue-rotate(347deg) brightness(88%) contrast(89%);
+}
+
+#banner {
+  width: 100px;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+#about {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+}
+
+#about .title {
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+}
+
+#about a {
+  text-decoration: none;
+  border: 1px solid #000;
+  padding: 10px 50px;
+}
+
+#about h2 {
+  font-size: 300px;
+  font-family: "Playfair Display", serif;
+  letter-spacing: 20px;
+  padding-left: 20px;
+  margin-top: 100px;
 }
 /*# sourceMappingURL=style.css.map */
