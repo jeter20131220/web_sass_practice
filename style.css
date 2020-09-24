@@ -81,6 +81,7 @@
   font-family: "Playfair Display", serif;
   padding: 20px;
   text-align: center;
+  font-size: 36px;
 }
 
 #about a {
@@ -121,6 +122,8 @@
   text-align: center;
   font-family: "Playfair Display", serif;
   padding: 20px;
+  font-size: 36px;
+  margin: 30px;
 }
 
 #work #work-box {
