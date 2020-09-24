@@ -80,19 +80,55 @@
 #about .title {
   font-family: "Playfair Display", serif;
   padding: 20px;
+  text-align: center;
 }
 
 #about a {
   text-decoration: none;
   border: 1px solid #000;
   padding: 10px 50px;
+  margin-top: 30px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#about a:hover {
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
 }
 
 #about h2 {
-  font-size: 300px;
+  font-size: 240px;
   font-family: "Playfair Display", serif;
   letter-spacing: 20px;
   padding-left: 20px;
   margin-top: 100px;
+  font-weight: 300;
+}
+
+#about p {
+  margin: 50px;
+  font-size: 24px;
+}
+
+#work {
+  height: 100vh;
+  background-color: #eee;
+}
+
+#work .title {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  padding: 20px;
+}
+
+#work #work-box {
+  width: 1200px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
 }
 /*# sourceMappingURL=style.css.map */
