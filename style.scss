@@ -4,9 +4,9 @@ $font-family-main: "Playfair Display", serif;
 $font-size-big: 36px;
 $color-bgc: #eee;
 // RWDG設計
-$desktop:1025px;
-$table:1024px;
-$moblie:767px;
+$desktop: 1025px;
+$table: 1024px;
+$moblie: 767px;
 
 * {
     margin: 0;
@@ -25,84 +25,84 @@ $moblie:767px;
     position: fixed;
     width: 100%;
     background-color: #fff;
+    @media screen and(min-width:$desktop) {
+        grid-template-areas: "logo menu social";
+    }
     @media screen and(max-width:$table) {
-        grid-template-areas:"logo social menu";
+        grid-template-areas: "logo social menu";
     }
     @media screen and(max-width:$moblie) {
-       padding: 5px 5px;
+        padding: 5px 5px;
     }
-    #menu{
-        grid-area:menu;
+    #menu {
+        grid-area: menu;
         @media screen and(min-width:$desktop) {
-            display:none;
+            display: none;
         }
 
         @media screen and(max-width:$table) {
-            display:block;
+            display: block;
             margin-left: auto;
         }
         @media screen and(max-width:$moblie) {
             width: 36px;
             margin-left: 50px;
             margin-right: 5px;
-            
-         }
+        }
+    }
+}
+.logo {
+    grid-area: logo;
+    font-family: $font-family-main;
+    font-size: $font-size-big;
+    text-decoration: none;
+    transition: 0.3s;
+    margin-left: 30px;
+    @media screen and(max-width:$moblie) {
+        font-size: 24px;
+        margin-left: 0;
     }
 
+    &:hover {
+        color: $color-sub;
+    }
 }
-        .logo {
-            grid-area:logo;
-            font-family: $font-family-main;
-            font-size: $font-size-big;
-            text-decoration: none;
-            transition: 0.3s;
-            margin-left: 30px;
-            @media screen and(max-width:$moblie) {
-                font-size: 24px;
-                margin-left: 0;
-             }
-          
-            &:hover {
-                color: $color-sub;
-            }
+.link {
+    a {
+        text-decoration: none;
+        padding: 30px;
+        transition: 0.3s;
+        font-size: 28px;
+
+        &:hover {
+            color: $color-sub;
         }
-        .link {
-            a {
-                text-decoration: none;
-                padding: 60px;
-                transition: 0.3s;
-                font-size: 28px;
-    
-                &:hover {
-                    color: $color-sub;
-                }
-            }
-            // RWD
-            @media screen and (max-width:$table){
-                display:none;
-            }
+    }
+    // RWD
+    @media screen and (max-width: $table) {
+        display: none;
+    }
+}
+
+.social {
+    grid-area: social;
+    text-align: right;
+
+    img {
+        width: 40px;
+        margin-right: 20px;
+        @media screen and(max-width:$moblie) {
+            margin-right: 0;
+            width: 25px;
         }
-    
-        .social {
-            grid-area:social;
-            text-align: right;
-           
-    
-            img {
-                width: 40px;
-                margin-right: 20px;
-                @media screen and(max-width:$moblie) {
-                    margin-right: 0;
-                    width: 30px;
-                 }
-    
-                filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(137deg) brightness(91%) contrast(112%);
-    
-                &:hover {
-                    filter: invert(78%) sepia(0%) saturate(0%) hue-rotate(347deg) brightness(88%) contrast(89%);
-                }
-            }
+
+        filter: invert(0%) sepia(100%) saturate(7500%) hue-rotate(137deg) brightness(91%) contrast(112%);
+
+        &:hover {
+            filter: invert(78%) sepia(0%) saturate(0%) hue-rotate(347deg) brightness(88%) contrast(89%);
         }
+    }
+}
 // 橫幅
 #banner {
     width: 100px;
@@ -114,12 +114,15 @@ $moblie:767px;
     width: 100%;
     height: 100vh;
     text-align: center;
+    @media screen and(max-width:$table) {
+      height: 70vh;
+    }
 
     .title {
         font-family: $font-family-main;
         padding: 20px;
         text-align: center;
-        font-size:$font-size-big;
+        font-size: $font-size-big;
     }
 
     a {
@@ -143,10 +146,13 @@ $moblie:767px;
         padding-left: 20px;
         margin-top: 100px;
         font-weight: 300;
-        @media screen and (max-width:$table){
-            font-size:145px;
+        @media screen and (max-width: $table) {
+            font-size: 145px;
         }
-
+        @media screen and(max-width:$moblie) {
+            font-size: 72px;
+            letter-spacing:5px;
+        }
     }
     p {
         margin: 50px;
@@ -162,7 +168,7 @@ $moblie:767px;
         text-align: center;
         font-family: $font-family-main;
         padding: 20px;
-        font-size:$font-size-big;
+        font-size: $font-size-big;
         margin: 30px;
     }
     #work-box {
@@ -173,9 +179,14 @@ $moblie:767px;
         grid-gap: 10px 25px;
         grid-template-rows: repeat(2, 335px);
         @media screen and(max-width:$table) {
-            width: 100%;
-            grid-template-columns: repeat(2,1fr);
-            padding:0 30px ;
+            width: 90%;
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 30px;
+        }
+        @media screen and(max-width:$moblie) {
+            width: 90%;
+            grid-template-columns: repeat(1,1fr);
+            padding: 0 10px;
         }
         .work-box-small {
             img {
@@ -219,25 +230,28 @@ $moblie:767px;
     }
 }
 
-footer{
-    background-color:$color-main;
+footer {
+    background-color: $color-main;
     padding: 50px;
     text-align: center;
     height: 300px;
-    a{
-      color:$color-bgc;  
+    @media screen and(max-width:$moblie) {
+       height: 200px;
+       padding: 20px;
     }
-    .social{
+    a {
+        color: $color-bgc;
+    }
+    .social {
         text-align: center;
-        img{
+        img {
             margin: 30px 25px;
 
             filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(334deg) brightness(107%) contrast(102%);
         }
     }
-    #copyright{
-        color:$color-bgc;
+    #copyright {
+        color: $color-bgc;
         margin-top: 50px;
     }
-
 }
